@@ -32,7 +32,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,12,24,0.28)_0%,transparent_40%,rgba(2,12,24,0.78)_100%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_38%,rgba(221,174,88,0.12),transparent_32%)]" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[90rem] flex-1 flex-col px-5 pt-24 pb-9 sm:px-8 lg:px-12 lg:pb-10 xl:px-16">
+      <div className="relative z-10 mx-auto flex w-full max-w-[90rem] flex-1 flex-col px-5 pt-24 pb-7 sm:px-8 sm:pb-9 lg:px-12 xl:px-16">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -40,12 +40,12 @@ export function Hero() {
             staggerChildren: reduceMotion ? 0 : 0.13,
             delayChildren: 0.15,
           }}
-          className="my-auto max-w-3xl py-16 sm:py-20"
+          className="my-auto max-w-[46rem] py-10 sm:py-14 lg:py-10"
         >
           <motion.div
             variants={reduceMotion ? undefined : reveal}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-6 flex items-center gap-3 text-xs font-semibold tracking-[0.24em] text-[#e2bd72] uppercase sm:text-sm"
+            className="mb-5 flex items-center gap-3 text-[0.68rem] font-semibold tracking-[0.24em] text-[#e2bd72] uppercase sm:mb-6 sm:text-xs"
           >
             <span className="h-px w-9 bg-[#e2bd72]" aria-hidden="true" />
             Celebrations, elevated
@@ -55,7 +55,7 @@ export function Hero() {
             id="hero-heading"
             variants={reduceMotion ? undefined : reveal}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-3xl font-serif text-[clamp(3.25rem,9vw,7.5rem)] leading-[0.88] font-medium tracking-[-0.045em] text-balance"
+            className="max-w-[46rem] font-serif text-[clamp(3rem,7vw,6.75rem)] leading-[0.91] font-medium tracking-[-0.04em] text-balance"
           >
             Crafted for your{" "}
             <span className="bg-gradient-to-r from-[#f8e3b4] via-[#e9c375] to-[#c38a35] bg-clip-text text-transparent italic">
@@ -66,7 +66,7 @@ export function Hero() {
           <motion.p
             variants={reduceMotion ? undefined : reveal}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-7 max-w-xl text-base leading-7 text-white/72 sm:text-lg sm:leading-8"
+            className="mt-6 max-w-xl text-[0.95rem] leading-7 text-white/72 sm:mt-7 sm:text-base sm:leading-8"
           >
             Thoughtful tent design, distinctive catering, and seamless
             hospitality—brought together for weddings and celebrations that stay
@@ -76,7 +76,7 @@ export function Hero() {
           <motion.div
             variants={reduceMotion ? undefined : reveal}
             transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
+            className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center"
           >
             <Link
               href="#contact"

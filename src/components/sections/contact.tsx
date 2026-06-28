@@ -7,7 +7,27 @@ const contact = {
 };
 
 export function Contact() {
-  const hasDirectContact = Boolean(contact.email || contact.phone);
+  const contactItems = [
+    contact.phone
+      ? {
+          icon: Phone,
+          label: "Call",
+          value: contact.phone,
+          href: "tel:" + contact.phone.replace(/\s/g, ""),
+        }
+      : null,
+    contact.email
+      ? {
+          icon: Mail,
+          label: "Email",
+          value: contact.email,
+          href: "mailto:" + contact.email,
+        }
+      : null,
+    contact.location
+      ? { icon: MapPin, label: "Location", value: contact.location }
+      : null,
+  ].filter((item) => item !== null);
 
   return (
     <section
@@ -53,47 +73,21 @@ export function Contact() {
                 aria-hidden="true"
               />
             </a>
-          ) : (
-            <p className="mt-10 inline-flex rounded-full border border-[#e2bd72]/30 px-6 py-4 text-sm text-[#f2d28f]">
-              Verified booking details will be published shortly.
-            </p>
-          )}
+          ) : null}
         </div>
 
-        <address className="not-italic">
-          <p className="text-xs font-bold tracking-[0.22em] text-white/40 uppercase">
-            Contact details
-          </p>
-          <div className="mt-5 divide-y divide-white/12 border-y border-white/12">
-            <ContactRow
-              icon={Phone}
-              label="Call"
-              value={contact.phone}
-              href={
-                contact.phone
-                  ? "tel:" + contact.phone.replace(/\s/g, "")
-                  : undefined
-              }
-            />
-            <ContactRow
-              icon={Mail}
-              label="Email"
-              value={contact.email}
-              href={contact.email ? "mailto:" + contact.email : undefined}
-            />
-            <ContactRow
-              icon={MapPin}
-              label="Location"
-              value={contact.location}
-            />
-          </div>
-          {!hasDirectContact ? (
-            <p className="mt-5 text-xs leading-5 text-white/38">
-              Contact information is intentionally hidden until the official
-              business details are verified.
+        {contactItems.length > 0 ? (
+          <address className="not-italic">
+            <p className="text-xs font-bold tracking-[0.22em] text-white/40 uppercase">
+              Contact details
             </p>
-          ) : null}
-        </address>
+            <div className="mt-5 divide-y divide-white/12 border-y border-white/12">
+              {contactItems.map((item) => (
+                <ContactRow key={item.label} {...item} />
+              ))}
+            </div>
+          </address>
+        ) : null}
       </div>
     </section>
   );
@@ -127,9 +121,7 @@ function ContactRow({
             {value}
           </a>
         ) : (
-          <p className="mt-1 text-sm text-white/35">
-            {value ?? "To be confirmed"}
-          </p>
+          <p className="mt-1 text-sm text-white/78">{value}</p>
         )}
       </div>
     </div>
