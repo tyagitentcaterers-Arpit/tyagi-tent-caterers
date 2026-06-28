@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tyagi Tent & Caterers
 
-## Getting Started
+Production website for Tyagi Tent & Caterers.
 
-First, run the development server:
+## Status
+
+The production architecture is initialized. No page or UI section has been built yet.
+
+## Technology
+
+- Next.js 15 with the App Router
+- React 19 and TypeScript
+- Tailwind CSS 4
+- shadcn/ui foundation
+- Motion for React (Framer Motion)
+- ESLint and Prettier
+
+## Local development
+
+Use Node.js 20 or newer.
 
 ```bash
+cp .env.example .env.local
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Quality checks
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run check
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This runs linting, TypeScript validation, formatting checks, and a production build.
 
-## Learn More
+## Source structure
 
-To learn more about Next.js, take a look at the following resources:
+```text
+src/
+├── app/                 App Router, metadata, robots, and sitemap
+├── components/
+│   ├── common/          Reusable application components
+│   ├── layout/          Shared layout components
+│   ├── providers/       Client and context providers
+│   └── ui/              shadcn/ui primitives
+├── config/              Typed application configuration
+├── hooks/               Reusable React hooks
+├── lib/                 Shared utilities and integrations
+└── types/               Shared TypeScript types
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Environment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Variable               | Purpose                                                        |
+| ---------------------- | -------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL` | Canonical production URL used by metadata, robots, and sitemap |
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Copy `.env.example` to `.env.local` for local overrides. Secrets and local environment files are ignored by Git.
