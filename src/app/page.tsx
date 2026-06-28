@@ -5,6 +5,7 @@ import { Contact } from "@/components/sections/contact";
 import { FAQ } from "@/components/sections/faq";
 import { Footer } from "@/components/sections/footer";
 import { Hero } from "@/components/sections/hero";
+import { Navbar } from "@/components/sections/navbar";
 import { Portfolio } from "@/components/sections/portfolio";
 import { Process } from "@/components/sections/process";
 import { Services } from "@/components/sections/services";
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      <Navbar />
       <main>
         <Hero />
         <Services />

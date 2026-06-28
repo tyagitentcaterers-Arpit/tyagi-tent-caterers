@@ -32,32 +32,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,12,24,0.28)_0%,transparent_40%,rgba(2,12,24,0.78)_100%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_38%,rgba(221,174,88,0.12),transparent_32%)]" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[90rem] flex-1 flex-col px-5 pt-7 pb-9 sm:px-8 lg:px-12 lg:pt-8 lg:pb-10 xl:px-16">
-        <motion.div
-          initial={reduceMotion ? false : { opacity: 0, y: -16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="flex items-center gap-3"
-        >
-          <div className="relative size-14 overflow-hidden rounded-full border border-[#e2bd72]/40 shadow-[0_0_28px_rgba(226,189,114,0.16)] sm:size-16">
-            <Image
-              src="/images/tyagi-logo.webp"
-              alt="Tyagi Tent & Caterers"
-              fill
-              sizes="64px"
-              className="object-cover"
-            />
-          </div>
-          <div>
-            <p className="font-serif text-lg tracking-[0.12em] text-[#f2d28f] sm:text-xl">
-              TYAGI
-            </p>
-            <p className="text-[0.58rem] font-medium tracking-[0.3em] text-white/65 uppercase sm:text-[0.65rem]">
-              Tent & Caterers
-            </p>
-          </div>
-        </motion.div>
-
+      <div className="relative z-10 mx-auto flex w-full max-w-[90rem] flex-1 flex-col px-5 pt-24 pb-9 sm:px-8 lg:px-12 lg:pb-10 xl:px-16">
         <motion.div
           initial="hidden"
           animate="visible"
