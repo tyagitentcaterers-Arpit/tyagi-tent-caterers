@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { About } from "@/components/sections/about";
+import { Contact } from "@/components/sections/contact";
 import { FAQ } from "@/components/sections/faq";
 import { Hero } from "@/components/sections/hero";
 import { Portfolio } from "@/components/sections/portfolio";
@@ -24,6 +25,7 @@ export default function HomePage() {
       <Process />
       <Testimonials />
       <FAQ />
+      <Contact />
     </main>
   );
 }
