@@ -4,6 +4,7 @@ import { Hero } from "@/components/sections/hero";
 import { Portfolio } from "@/components/sections/portfolio";
 import { Process } from "@/components/sections/process";
 import { Services } from "@/components/sections/services";
+import { Testimonials } from "@/components/sections/testimonials";
 
 export const metadata: Metadata = {
   title: "Luxury Tent & Catering Services",
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Portfolio />
       <About />
       <Process />
+      <Testimonials />
     </main>
   );
 }
