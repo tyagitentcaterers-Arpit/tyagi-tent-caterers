@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Geist } from "next/font/google";
 
 import { siteConfig } from "@/config/site";
@@ -24,6 +24,17 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
+  keywords: [
+    "tent services",
+    "wedding catering",
+    "event catering",
+    "wedding tent decor",
+    "event services",
+  ],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  category: "Event services",
+  manifest: "/manifest.webmanifest",
   alternates: {
     canonical: "/",
   },
@@ -34,16 +45,32 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: siteConfig.name,
     description: siteConfig.description,
+    images: [
+      {
+        url: siteConfig.socialImage,
+        width: 1823,
+        height: 863,
+        alt: "A luxury wedding pavilion by Tyagi Tent & Caterers",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
+    images: [siteConfig.socialImage],
   },
   robots: {
     index: true,
     follow: true,
   },
+};
+
+export const viewport: Viewport = {
+  colorScheme: "light",
+  themeColor: "#071526",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

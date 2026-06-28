@@ -24,6 +24,7 @@ export function Hero() {
         alt="An elegant candlelit wedding pavilion prepared for a celebration"
         fill
         priority
+        quality={85}
         sizes="100vw"
         className="object-cover object-[62%_center]"
       />

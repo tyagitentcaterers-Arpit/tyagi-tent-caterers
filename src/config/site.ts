@@ -5,4 +5,6 @@ export const siteConfig = {
   description:
     "Official website of Tyagi Tent & Caterers, providing tent, catering, and event services.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? fallbackUrl,
+  logo: "/images/tyagi-logo.webp",
+  socialImage: "/images/hero-wedding-pavilion.webp",
 } as const;

@@ -10,6 +10,7 @@ import { Portfolio } from "@/components/sections/portfolio";
 import { Process } from "@/components/sections/process";
 import { Services } from "@/components/sections/services";
 import { Testimonials } from "@/components/sections/testimonials";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Luxury Tent & Catering Services",
@@ -18,8 +19,21 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    logo: new URL(siteConfig.logo, siteConfig.url).toString(),
+    description: siteConfig.description,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
       <Navbar />
       <main id="main-content">
         <Hero />
