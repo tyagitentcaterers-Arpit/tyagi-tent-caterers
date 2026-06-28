@@ -16,6 +16,8 @@ export default function HomePage() {
       <Hero />
       <Services />
       <Portfolio />
+      <About />
     </main>
   );
 }
+import { About } from "@/components/sections/about";
