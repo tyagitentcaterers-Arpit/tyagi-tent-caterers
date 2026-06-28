@@ -32,6 +32,17 @@ export function Navbar() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [open]);
+
   return (
     <header
       className={
@@ -74,7 +85,7 @@ export function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-[0.68rem] font-bold tracking-[0.16em] text-white/68 uppercase transition hover:text-[#e2bd72]"
+                className="relative py-2 text-[0.68rem] font-bold tracking-[0.16em] text-white/68 uppercase transition after:absolute after:right-0 after:bottom-0 after:left-0 after:h-px after:origin-right after:scale-x-0 after:bg-[#e2bd72] after:transition-transform hover:text-[#e2bd72] hover:after:origin-left hover:after:scale-x-100"
               >
                 {link.label}
               </Link>

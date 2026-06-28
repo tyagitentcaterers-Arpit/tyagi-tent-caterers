@@ -56,6 +56,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${cormorant.variable} min-h-dvh antialiased`}
       >
+        <a
+          href="#main-content"
+          className="fixed top-3 left-3 z-[100] -translate-y-20 rounded-full bg-[#e2bd72] px-5 py-3 text-sm font-bold text-[#071526] transition-transform focus:translate-y-0"
+        >
+          Skip to main content
+        </a>
         {children}
       </body>
     </html>

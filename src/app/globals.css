@@ -24,18 +24,40 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
   }
 
   body {
     background: var(--background);
     color: var(--foreground);
     font-family: var(--font-geist-sans), sans-serif;
+    overflow-x: clip;
     text-rendering: optimizeLegibility;
   }
 
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  ::selection {
+    background: #e2bd72;
+    color: #071526;
+  }
+
+  a,
+  button,
+  summary {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button,
+  summary {
+    touch-action: manipulation;
+  }
+
   :focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 3px;
+    outline: 2px solid #e2bd72;
+    outline-offset: 4px;
   }
 
   @media (prefers-reduced-motion: reduce) {
