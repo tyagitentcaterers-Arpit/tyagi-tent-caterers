@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { Hero } from "@/components/sections/hero";
 import { Portfolio } from "@/components/sections/portfolio";
+import { Process } from "@/components/sections/process";
 import { Services } from "@/components/sections/services";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function HomePage() {
       <Services />
       <Portfolio />
       <About />
+      <Process />
     </main>
   );
 }
