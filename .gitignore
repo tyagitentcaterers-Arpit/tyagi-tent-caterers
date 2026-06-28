@@ -44,3 +44,7 @@ next-env.d.ts
 # local Codex workspace artifacts
 /outputs/
 /work/
+
+# unoptimized source artwork (optimized WebP assets are committed)
+/public/images/hero-wedding-pavilion.png
+/public/images/tyagi-logo-source.png
